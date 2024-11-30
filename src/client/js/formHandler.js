@@ -1,5 +1,5 @@
-// Replace checkForName with a function that checks the URL
-import { checkForName } from './nameChecker'
+// Function that checks the URL
+import { checkForURL } from './urlChecker'
 
 // If working on Udacity workspace, update this with the Server API URL e.g. `https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api`
 // const serverURL = 'https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api'
@@ -15,7 +15,7 @@ function handleSubmit(event) {
     const formText = document.getElementById('name').value;
 
     // This is an example code that checks the submitted name. You may remove it from your code
-    checkForName(formText);
+    checkForURL(formText);
     
     // Check if the URL is valid
  

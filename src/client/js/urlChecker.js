@@ -1,12 +1,5 @@
-function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ];
+function checkForURL(inputText) {
+    console.log("::: Running checkForURL :::", inputText);
 
     if(isValidUrl(inputText)) {
         alert("VALID!!");
@@ -21,4 +14,4 @@ function isValidUrl(url) {
     return pattern.test(url);
   }
 
-export { checkForName };
+export { checkForURL };
