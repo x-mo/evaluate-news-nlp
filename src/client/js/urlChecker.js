@@ -2,10 +2,11 @@ function checkForURL(inputText) {
     console.log("::: Running checkForURL :::", inputText);
 
     if(isValidUrl(inputText)) {
-        alert("VALID!!");
+        return true;
     }
     else {
         alert("Enter a valid URL");
+        return false;
     }
 }
 
