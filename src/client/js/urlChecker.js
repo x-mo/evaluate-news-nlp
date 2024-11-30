@@ -16,3 +16,4 @@ function isValidUrl(url) {
   }
 
 export { checkForURL };
+export { isValidUrl };
