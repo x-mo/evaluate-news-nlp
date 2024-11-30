@@ -12,7 +12,7 @@ function handleSubmit(event) {
     event.preventDefault();
 
     // Get the URL from the input field
-    const formText = document.getElementById('name').value;
+    const formText = document.getElementById('urlInput').value;
 
     // This is an example code that checks the submitted name. You may remove it from your code
     checkForURL(formText);
