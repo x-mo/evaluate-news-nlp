@@ -30,8 +30,15 @@ app.post('/api', function(req, res){
 
   getAnalysis(req.body.article_url)
     .then(function (data) {
-      console.log(data)
-      res.send(data)
+      
+      const sentences = data.sentence_list
+      const sentence = sentences[Math.floor(Math.random()*sentences.length)];
+      res.send({
+        agreement : data.agreement,
+        irony : data.irony,
+        confidence : data.confidence,
+        snippet : sentence.text
+      })
     })
 
 })
