@@ -38,6 +38,9 @@ module.exports = {
     ],
     devServer: {
         port: 3000,
-        allowedHosts: 'all'
+        allowedHosts: 'all',
+        devMiddleware: {
+            writeToDisk: true,
+          }
     }
 }
