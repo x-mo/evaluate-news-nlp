@@ -1,0 +1,13 @@
+@import './variables';
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $sectionColor;
+    height: $sectionHeight;
+    
+    p {
+        color: $secondaryTextColor;
+    }
+}

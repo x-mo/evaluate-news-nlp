@@ -1,5 +1,15 @@
+@import './variables';
+
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    background-color: $sectionColor;
+    color: $secondaryTextColor;
+    
+    .linkable{
+        &:hover {
+            color:$accentColor
+        }
+    }
 }
