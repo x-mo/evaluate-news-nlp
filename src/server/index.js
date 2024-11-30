@@ -36,6 +36,7 @@ app.post('/api', function(req, res){
       res.send({
         agreement : data.agreement,
         irony : data.irony,
+        subjectivity: data.subjectivity,
         confidence : data.confidence,
         snippet : sentence.text
       })

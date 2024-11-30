@@ -22,8 +22,42 @@ function handleSubmit(event) {
         // If the URL is valid, send it to the server
         console.log("::: Form Submitted :::")
         postData(serverEndpoint, formText)
+        .then(function (data){
+            resultsDiv.innerHTML = ''
+            resultsDiv.appendChild(createResultViews(data))
+        })
     }
 }
+
+function createResultViews(data) {
+    const documentFragment = document.createDocumentFragment();
+    
+    const hConfidence = document.createElement('h1')
+    hConfidence.textContent = `Confidence: ${data.confidence}`;
+    documentFragment.appendChild(hConfidence);
+    
+    const hAgreement = document.createElement('h1')
+    hAgreement.textContent = `Agreement: ${data.agreement}`;
+    documentFragment.appendChild(hAgreement);
+
+    const hIrony = document.createElement('h1')
+    hIrony.textContent = `Irony: ${data.irony}`;
+    documentFragment.appendChild(hIrony);
+
+    const hSubjectivity = document.createElement('h1')
+    hSubjectivity.textContent = `Subjectivity: ${data.subjectivity}`;
+    documentFragment.appendChild(hSubjectivity);
+
+    const hSnippet = document.createElement('h1')
+    hSnippet.textContent = `Snippet: ${data.snippet}`;
+    documentFragment.appendChild(hSnippet);
+
+    
+    return documentFragment;
+}
+
+
+const resultsDiv = document.getElementById('results');
 
 // Function to send data to the server
 async function postData(url, articleUrl) {
