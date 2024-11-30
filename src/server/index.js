@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 
 // Designates what port the app will listen to for incoming requests
 app.listen(8000, function () {
-    console.log('Example app listening on port 8000!');
+    console.log('Article Evaluation app listening on port 8000!');
 });
 
 
