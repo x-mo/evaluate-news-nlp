@@ -8,12 +8,17 @@ function checkForName(inputText) {
         "Georgiou"
     ];
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!");
+    if(isValidUrl(inputText)) {
+        alert("VALID!!");
     }
     else {
-        alert("Enter a valid captain name");
+        alert("Enter a valid URL");
     }
 }
+
+function isValidUrl(url) {
+    const pattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-]*)*$/;
+    return pattern.test(url);
+  }
 
 export { checkForName };
