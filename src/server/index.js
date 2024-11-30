@@ -17,9 +17,7 @@ console.log(__dirname);
 
 // Variables for url and api key
 
-var textapi = new mcapi({
-    application_key: process.env.API_KEY
-  });
+var api_key = process.env.API_KEY
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
