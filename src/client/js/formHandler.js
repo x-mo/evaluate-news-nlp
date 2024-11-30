@@ -29,7 +29,8 @@ function handleSubmit(event) {
 async function postData(url, articleUrl) {
     const res = await fetch(url, {
         method: 'POST',
-        body: articleUrl
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ "article_url": articleUrl}),
     });
     
     try {
