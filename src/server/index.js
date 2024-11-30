@@ -26,8 +26,37 @@ app.get('/', function (req, res) {
 
 
 // POST Route
+app.post('/api', function(req, res){
 
+  getAnalysis(req.body.article_url)
+    .then(function (data) {
+      console.log(data)
+      res.send(data)
+    })
 
+})
+
+async function getAnalysis(articleUrl) {
+  
+  const formdata = new FormData();
+  formdata.append('key', api_key);
+  formdata.append('url', articleUrl);
+  formdata.append('lang', 'auto');
+  
+  const requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: "follow"
+  };
+  
+  const res = await fetch(api_url, requestOptions);
+  try {
+      const data = await res.json();
+      return data;
+  } catch (error) {
+      console.log("error", error);
+  }
+}
 
 // Designates what port the app will listen to for incoming requests
 app.listen(8000, function () {
