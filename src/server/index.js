@@ -18,7 +18,7 @@ console.log(__dirname);
 // Variables for url and api key
 
 const api_key = process.env.API_KEY
-const api_url = "https://26f1c68889f246f5bea3f19b9f7cc708.api.mockbin.io/"
+const api_url = "https://api.meaningcloud.com/sentiment-2.1"
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
